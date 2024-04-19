@@ -442,8 +442,7 @@ hBhdn1W18gV+Zw1v5tYpPzIr
                 {
                     var helper = new QinglongHelper(QlConfig.Current.Url,
                          QlConfig.Current.AppId,
-                         QlConfig.Current.AppSecret,
-                         UserConfig.Current.CurrentUserName);
+                         QlConfig.Current.AppSecret);
                     await helper.Login();
                     _qinglongHelper = helper;
                     uiLabQlState.Text = "青龙连接成功";

@@ -18,12 +18,11 @@ namespace HuluwaToken.Common
         private string _userName;
         private QlLogin _qlLogin;
         private List<QlEnv> _qlEnvList;
-        public QinglongHelper(string url, string appId, string appSecret, string userName)
+        public QinglongHelper(string url, string appId, string appSecret)
         {
             _url = url;
             _appId = appId;
             _appSecret = appSecret;
-            _userName = userName;
         }
 
         private HttpClient GetHttpClient()
@@ -42,7 +41,7 @@ namespace HuluwaToken.Common
 
         private string GetRemarks()
         {
-            return $"{_prefix}{_userName}";
+            return $"{_prefix}{UserConfig.Current.CurrentUserName}";
         }
 
         private async Task GetEnvList()
